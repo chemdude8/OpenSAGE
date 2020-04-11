@@ -51,6 +51,10 @@ namespace OpenSage.Gui.Wnd.Images
 
         internal void Draw(DrawingContext2D drawingContext, in Rectangle destinationRect)
         {
+            if (_texture == null)
+            {
+                throw new InvalidOperationException();
+            }
             drawingContext.DrawImage(_texture, null, destinationRect, grayscale: _grayscale);
         }
     }
